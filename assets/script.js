@@ -1,10 +1,19 @@
-let decreaseBtn = document.querySelector("#quantity-down")
-let increaseBtn = document.querySelector("#quantity-up")
+let decreaseBtn = document.querySelector("#quantity-down") //assigns variable to "quantity-down"
+let increaseBtn = document.querySelector("#quantity-up") // assigns variable to "quantity-up"
 
-function updateQuantity(displayQuantity){
-    let quantity = document.querySelector(".total-quantity")
+function updateQuantity(displayQuantity){ 
+    let quantity = document.querySelector(".total-quantity") //selects the total quantity
     quantity.innerHTML = displayQuantity
 }
 
-let quantity = 1
+let quantity = 1 //sets inital quantity to 1
+
+decreaseBtn.addEventListener("click", function(e){
+    if(quantity > 0){
+        quantity-- // decreases value, but doesn't let it fall below zero
+    }else {
+        window.alert("Nothing in the cart, dummy! (luv u)") // pulls up a window alerting the user that there is nothing in the cart
+    }
+    updateQuantity(`Quantity: ${quantity}`) //interpolates into a number
+})
 
