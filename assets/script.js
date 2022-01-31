@@ -6,9 +6,10 @@ function updateQuantity(displayQuantity){
     quantity.innerHTML = displayQuantity
 }
 
+
 let quantity = 1 //sets inital quantity to 1
 
-decreaseBtn.addEventListener("click", function(e){
+decreaseBtn.addEventListener("click", function(e){ //listens for a click on the "-" button
     if(quantity > 0){
         quantity-- // decreases value, but doesn't let it fall below zero
     }else {
@@ -17,3 +18,7 @@ decreaseBtn.addEventListener("click", function(e){
     updateQuantity(`Quantity: ${quantity}`) //interpolates into a number
 })
 
+increaseBtn.addEventListener("click", function(e){ //listens for a click on the "+" button
+    quantity++ // increases value
+    updateQuantity(`Quantity: ${quantity}`) //interpolates into a number
+})
